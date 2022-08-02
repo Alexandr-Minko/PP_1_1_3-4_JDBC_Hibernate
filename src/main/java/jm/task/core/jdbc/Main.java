@@ -2,6 +2,7 @@ package jm.task.core.jdbc;
 
 public class Main {
     public static void main(String[] args) {
+        // проверка 1426
         try {
             Class.forName("jm.task.core.jdbc.util.TestClass2");
         } catch (ClassNotFoundException e) {

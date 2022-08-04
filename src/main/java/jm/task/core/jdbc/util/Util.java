@@ -5,13 +5,12 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Util {
-    public Connection getDbConnection() throws SQLException {
+    public static Connection getDbConnection() throws SQLException {
         String UserName =        "root";
         String Password =        "12345@@@";
-        String ConnectionURL =   "jdbc:mysql://localhost:3306";
+        String ConnectionURL =   "jdbc:mysql://localhost:3306/db1";
 
         Connection connection = DriverManager.getConnection(ConnectionURL, UserName, Password);
-        System.out.println("Подключение к БД: ОК");
         return connection;
     }
 }

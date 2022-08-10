@@ -5,12 +5,12 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Util {
-    public static Connection getDbConnection() throws SQLException {
-        String UserName =        "root";
-        String Password =        "12345@@@";
-        String ConnectionURL =   "jdbc:mysql://localhost:3306/db1";
+    private static String userName =        "root";
+    private static String password =        "12345@@@";
+    private static String connectionURL =   "jdbc:mysql://localhost:3306/db1";
 
-        Connection connection = DriverManager.getConnection(ConnectionURL, UserName, Password);
-        return connection;
+    public static Connection getJDBCConnection() throws SQLException {
+        return DriverManager.getConnection(connectionURL, userName, password);
     }
+
 }

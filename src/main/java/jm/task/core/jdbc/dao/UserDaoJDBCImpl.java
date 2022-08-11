@@ -33,7 +33,7 @@ public class UserDaoJDBCImpl implements UserDao {
             try {
                 connection.setAutoCommit(true);
             } catch (SQLException e) {
-                System.out.println("Создание таблицы. Закрыть statement: Ошибка");
+                System.out.println("Создание таблицы. setAutoCommit(true): Ошибка");
             }
         }
     }
@@ -53,7 +53,7 @@ public class UserDaoJDBCImpl implements UserDao {
             try {
                 connection.setAutoCommit(true);
             } catch (SQLException e) {
-                System.out.println("Удаление таблицы. Закрыть statement: Ошибка");
+                System.out.println("Удаление таблицы. setAutoCommit(true): Ошибка");
             }
         }
     }
@@ -77,7 +77,7 @@ public class UserDaoJDBCImpl implements UserDao {
             try {
                 connection.setAutoCommit(true);
             } catch (SQLException e) {
-                System.out.println("Добавление строки. Закрыть statement: Ошибка");
+                System.out.println("Добавление строки. setAutoCommit(true): Ошибка");
             }
         }
     }
@@ -98,7 +98,7 @@ public class UserDaoJDBCImpl implements UserDao {
             try {
                 connection.setAutoCommit(true);
             } catch (SQLException e) {
-                System.out.println("Удаление строки. Закрыть statement: Ошибка");
+                System.out.println("Удаление строки. setAutoCommit(true): Ошибка");
             }
         }
     }
@@ -121,7 +121,7 @@ public class UserDaoJDBCImpl implements UserDao {
             try {
                 connection.setAutoCommit(true);
             } catch (SQLException e) {
-                System.out.println("Получить всех user-ов. Закрыть statement: Ошибка");
+                System.out.println("Получить всех user-ов. setAutoCommit(true): Ошибка");
             }
         }
         return listUsers;
@@ -143,7 +143,7 @@ public class UserDaoJDBCImpl implements UserDao {
             try {
                 connection.setAutoCommit(true);
             } catch (SQLException e) {
-                System.out.println("Очистка таблицы. Закрыть statement: Ошибка");
+                System.out.println("Очистка таблицы. setAutoCommit(true): Ошибка");
             }
         }
     }

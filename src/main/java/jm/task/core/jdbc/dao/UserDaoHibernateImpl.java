@@ -22,7 +22,7 @@ public class UserDaoHibernateImpl implements UserDao {
     public void createUsersTable() {
         try (Session session = sessionFactory.openSession()) {
             transaction = session.beginTransaction();
-            session.createSQLQuery("CREATE TABLE user (id BIGINT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(100), lastName VARCHAR(100), age TINYINT)").executeUpdate();
+            session.createSQLQuery("CREATE TABLE IF NOT EXISTS user (id BIGINT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(100), lastName VARCHAR(100), age TINYINT)").executeUpdate();
             transaction.commit();
         } catch (PersistenceException e) {
             try {
@@ -37,7 +37,7 @@ public class UserDaoHibernateImpl implements UserDao {
     public void dropUsersTable() {
         try (Session session = sessionFactory.openSession()) {
             transaction = session.beginTransaction();
-            session.createSQLQuery("DROP TABLE user").executeUpdate();
+            session.createSQLQuery("DROP TABLE IF EXISTS user").executeUpdate();
             transaction.commit();
         } catch (PersistenceException e) {
             try {
@@ -101,8 +101,8 @@ public class UserDaoHibernateImpl implements UserDao {
     public void cleanUsersTable() {
         try (Session session = sessionFactory.openSession()) {
             transaction = session.beginTransaction();
-            session.createSQLQuery("DROP TABLE user").executeUpdate();
-            session.createSQLQuery("CREATE TABLE user (id BIGINT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(100), lastName VARCHAR(100), age TINYINT)\"").executeUpdate();
+            session.createSQLQuery("DROP TABLE IF EXISTS user").executeUpdate();
+            session.createSQLQuery("CREATE TABLE IF NOT EXISTS user (id BIGINT PRIMARY KEY AUTO_INCREMENT, name VARCHAR(100), lastName VARCHAR(100), age TINYINT)").executeUpdate();
             transaction.commit();
         } catch (PersistenceException e) {
             try {
